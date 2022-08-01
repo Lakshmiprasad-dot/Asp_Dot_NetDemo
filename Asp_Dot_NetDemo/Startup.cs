@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Asp_Dot_NetDemo.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Asp_Dot_NetDemo
 {
     public class Startup
@@ -23,6 +26,10 @@ namespace Asp_Dot_NetDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>((options) =>
+            {
+                options.UseSqlServer("MyDefaultConnectionString");
+            });
             services.AddRazorPages();
         }
 
