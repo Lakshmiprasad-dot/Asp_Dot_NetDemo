@@ -7,6 +7,7 @@ namespace Asp_Dot_NetDemo.Data
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> categories { get; set; }
+        public DbSet<Product> products { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
             : base(options)
         {

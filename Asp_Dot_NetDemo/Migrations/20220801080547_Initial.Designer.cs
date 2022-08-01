@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp_Dot_NetDemo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220801064346_Initial")]
+    [Migration("20220801080547_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,6 +57,29 @@ namespace Asp_Dot_NetDemo.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Asp_Dot_NetDemo.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("NumberOfProducts")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

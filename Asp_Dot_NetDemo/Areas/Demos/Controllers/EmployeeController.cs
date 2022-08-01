@@ -9,6 +9,10 @@ namespace Asp_Dot_NetDemo.Areas.Demos.Controllers
         {
             return View();
         }
+        public IActionResult Index3()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Index(EmployeeViewModel viewModel)

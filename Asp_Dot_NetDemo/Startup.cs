@@ -28,7 +28,7 @@ namespace Asp_Dot_NetDemo
         {
             services.AddDbContext<ApplicationDbContext>((options) =>
             {
-                options.UseSqlServer("MyDefaultConnectionString");
+                options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
             });
             services.AddRazorPages();
         }

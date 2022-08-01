@@ -56,6 +56,29 @@ namespace Asp_Dot_NetDemo.Migrations
 
                     b.ToTable("Categories");
                 });
+
+            modelBuilder.Entity("Asp_Dot_NetDemo.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("NumberOfProducts")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Products");
+                });
 #pragma warning restore 612, 618
         }
     }
