@@ -22,5 +22,14 @@ namespace Asp_Dot_NetDemo.Models
         [Required]
         [DefaultValue(false)]
         public bool IsEnabled { get; set; }
+
+
+        #region Navigation Properties to the Category Model
+        public int CategoryId { get; set; }
+
+        [ForeignKey(nameof(Book.CategoryId))]
+        public Category Category { get; set; }
+
+        #endregion
     }
 }

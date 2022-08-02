@@ -19,8 +19,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.26" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.27" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.27">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.25">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -28,9 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Books\Controllers\" />
     <Folder Include="Areas\Books\ViewModels\" />
-    <Folder Include="Areas\Books\Views\" />
     <Folder Include="Areas\Demos\Models\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
