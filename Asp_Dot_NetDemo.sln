@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_Dot_NetDemo", "Asp_Dot_NetDemo\Asp_Dot_NetDemo.csproj", "{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_Dot_NetDemo", "Asp_Dot_NetDemo\Asp_Dot_NetDemo.csproj", "{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products.Web", "Products.Web\Products.Web.csproj", "{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodCourt.Web", "FoodCourt.Web\FoodCourt.Web.csproj", "{4D52650F-AD73-4232-BD5E-47333D6F5775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D52650F-AD73-4232-BD5E-47333D6F5775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D52650F-AD73-4232-BD5E-47333D6F5775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D52650F-AD73-4232-BD5E-47333D6F5775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D52650F-AD73-4232-BD5E-47333D6F5775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

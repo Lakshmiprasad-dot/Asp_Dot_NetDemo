@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Books\ViewModels\" />
     <Folder Include="Areas\Demos\Models\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>

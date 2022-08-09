@@ -1,15 +1,14 @@
-﻿@model Asp_Dot_NetDemo.Models.Book
+﻿@* @model Asp_Dot_NetDemo.Models.Book *@
+@model Asp_Dot_NetDemo.Areas.Books.ViewModels.BookViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Book</h4>
+<h1>Create Book</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-8">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">

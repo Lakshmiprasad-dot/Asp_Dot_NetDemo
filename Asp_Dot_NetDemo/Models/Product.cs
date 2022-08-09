@@ -1,5 +1,4 @@
 ﻿
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Asp_Dot_NetDemo.Models
@@ -10,19 +9,20 @@ namespace Asp_Dot_NetDemo.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
-
-
         [Required]
-        [StringLength(100)]
+        [Column(TypeName = "varchar(50)")]
+        [StringLength(50)]
+        public string ProductName { get; set; }
+        [Required]
+        public string ProductDescription { get; set; }
+        [Required]
         public string ProductTitle { get; set; }
+        public int CategoryId { get; set; }
 
-        [Required]
-        [DefaultValue(1)]
-        public int NumberOfProducts { get; set; }
+        #region
 
-        [Required]
-        [DefaultValue(false)]
-        public bool IsEnabled { get; set; }
+        [ForeignKey(nameof(Product.CategoryId))]
+        public Category Category { get; set; }
+        #endregion
     }
 }
-
