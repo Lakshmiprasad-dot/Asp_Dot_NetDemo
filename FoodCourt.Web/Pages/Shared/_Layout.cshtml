@@ -11,21 +11,21 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">FoodCourt.Web</a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="color:darksalmon;">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index"><b style="font-size:20px;">Home</b></a>
+                        </li><li> </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy"><b style="font-size:20px;">Privacy</b></a>
+                        </li><li> </li>
                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Manage</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><b style="font-size:20px;">Manage</b></a>
                             <div class="dropdown-menu">
                                  <a class="dropdown-item"
                                    asp-area="Foods" asp-controller="Foods1" asp-action="Index">Food Items</a>
@@ -33,8 +33,12 @@
                                    asp-area="Foods" asp-controller="FoodCategories1" asp-action="Index">Food Categories</a>
                                  <a class="dropdown-item" 
                                    asp-area="Foods" asp-controller="Orders" asp-action="Index">Orders</a>
+                                 <a class="dropdown-item" 
+                                   asp-area="Foods" asp-controller="Customers" asp-action="Index">Customers List</a>
+
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>

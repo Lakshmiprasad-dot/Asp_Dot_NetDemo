@@ -18,6 +18,29 @@ namespace FoodCourt.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("FoodCourt.Web.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<long>("CustomerPhone")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customers Details");
+                });
+
             modelBuilder.Entity("FoodCourt.Web.Models.Food", b =>
                 {
                     b.Property<int>("FoodId")

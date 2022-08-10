@@ -25,5 +25,14 @@ namespace FoodCourt.Web.Models
         public FoodCategory FoodCategory { get; set; }
 
         #endregion
+
+        #region Navigation Properties to the Order Model
+        virtual public int CustomerId { get; set; }
+
+        [ForeignKey(nameof(Order.CustomerId))]
+        public Customer Customer { get; set; }
+
+        #endregion
+
     }
 }

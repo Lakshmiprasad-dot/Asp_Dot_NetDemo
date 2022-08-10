@@ -8,6 +8,7 @@ namespace FoodCourt.Web.Data
         public DbSet<FoodCategory> FoodCategories { get; set; }
 
         public DbSet<FoodCourt.Web.Models.Order> Order { get; set; }
+        public DbSet<Customer>Customers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

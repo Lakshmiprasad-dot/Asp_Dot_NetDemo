@@ -1,9 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace FoodCourt.Web.Models
 {
-    [Table(name: "Customers")]
+    [Table(name: "Customers Details")]
     public class Customer
     {
         [Key]
@@ -17,6 +18,8 @@ namespace FoodCourt.Web.Models
         public virtual long CustomerPhone { get; set; }
 
         public virtual string Address { get; set; }
+
+        
 
     }
 
