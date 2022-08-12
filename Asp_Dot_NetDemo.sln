@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_Dot_NetDemo", "Asp_Dot_NetDemo\Asp_Dot_NetDemo.csproj", "{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products.Web", "Products.Web\Products.Web.csproj", "{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRestaurant.Web", "OnlineRestaurant.Web\OnlineRestaurant.Web.csproj", "{5ACB9328-0C95-4D1D-8076-D3703A0416CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_Dot_NetDemo.xUnitTestProject", "Asp_Dot_NetDemo.xUnitTestProject\Asp_Dot_NetDemo.xUnitTestProject.csproj", "{9B953034-50F2-47A5-B358-E84893C42E78}"
@@ -21,10 +19,6 @@ Global
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF4F6BA-A73D-4B08-9AE1-CD7855205C47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FBBFD77-5E83-4E3C-B3B3-B3C2F0ACB577}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5ACB9328-0C95-4D1D-8076-D3703A0416CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5ACB9328-0C95-4D1D-8076-D3703A0416CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ACB9328-0C95-4D1D-8076-D3703A0416CD}.Release|Any CPU.ActiveCfg = Release|Any CPU

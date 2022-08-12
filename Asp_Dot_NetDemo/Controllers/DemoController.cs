@@ -11,7 +11,7 @@ namespace Asp_Dot_NetDemo.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(new string[] { "hello", "world" });
+            return Ok(new string[] { "This is API Demo Controller ......!Exicution..." });
         }
     }
 }
