@@ -13,6 +13,11 @@ namespace OnlineRestaurant.Web.Areas.Foods.Controllers
     [Area("Foods")]
     public class OrdersController : Controller
     {
+        public async Task<IActionResult> Index1()
+        {
+            var applicationDbContext = _context.Orders.Include(o => o.Customer).Include(o => o.FoodCategory);
+            return View(await applicationDbContext.ToListAsync());
+        }
         private readonly ApplicationDbContext _context;
 
         public OrdersController(ApplicationDbContext context)
@@ -64,9 +69,10 @@ namespace OnlineRestaurant.Web.Areas.Foods.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    _context.Add(order);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", order.CustomerId);
             ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategories, "FoodCategoryId", "FoodCategoryName", order.FoodCategoryId);

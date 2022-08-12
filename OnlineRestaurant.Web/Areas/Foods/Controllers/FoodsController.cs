@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnlineRestaurant.Web.Data;
@@ -68,9 +69,18 @@ namespace OnlineRestaurant.Web.Areas.Foods.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(food);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //Check for Duplicates
+                bool isFound = _context.Foods.Any(c => c.FoodName == food.FoodName);
+                if (isFound)
+                {
+                    ModelState.AddModelError("FoodName", "Duplicate Food Found");
+                }
+                else
+                {
+                    _context.Add(food);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategories, "FoodCategoryId", "FoodCategoryName", food.FoodCategoryId);
             return View(food);
@@ -108,23 +118,34 @@ namespace OnlineRestaurant.Web.Areas.Foods.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                //Check for Duplicates
+                bool isFound = await _context.Foods
+                    .AnyAsync(c => c.FoodId != food.FoodId
+                        && c.FoodName == food.FoodName);
+                if (isFound)
                 {
-                    _context.Update(food);
-                    await _context.SaveChangesAsync();
+                    ModelState.AddModelError("FoodName", "Duplicate Food Found !");
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!FoodExists(food.FoodId))
+                    try
                     {
-                        return NotFound();
+                        _context.Update(food);
+                        await _context.SaveChangesAsync();
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        throw;
+                        if (!FoodExists(food.FoodId))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
+                    return RedirectToAction(nameof(Index));
                 }
-                return RedirectToAction(nameof(Index));
             }
             ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategories, "FoodCategoryId", "FoodCategoryName", food.FoodCategoryId);
             return View(food);

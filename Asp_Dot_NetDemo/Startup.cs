@@ -11,6 +11,11 @@ using System.Threading.Tasks;
 
 using Asp_Dot_NetDemo.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
+
+// Add the assembly attribute, to ensure that the Swagger generates the complete API Documentation.
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
 namespace Asp_Dot_NetDemo
 {
@@ -31,6 +36,21 @@ namespace Asp_Dot_NetDemo
                 options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
             });
             services.AddRazorPages();
+
+            // Register the MVC Middleware - NEEDED for Swagger Documentation Middleware 
+            services.AddMvc();
+
+            // Register the Swagger Documentation Generation Middleware Service
+            // URL: https://localhost:xxxx/swagger
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Asp_Dot_NetDemo",
+                    Description = "Asp Dot Net Demo - API version 1"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +59,15 @@ namespace Asp_Dot_NetDemo
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                // Add the Swagger Middleware
+                app.UseSwagger();
+
+                // Add the Swagger Documentation Generation Middleware
+                app.UseSwaggerUI(config =>
+                {
+                    config.SwaggerEndpoint("/swagger/v1/swagger.json", "Asp Dot Net Demo - API version 1");
+                });
             }
             else
             {
