@@ -24,22 +24,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index"><b style="font-size:20px;padding:20px;padding-top:50px;">Home</b></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy"><b  style="font-size:20px;padding:20px;">Privacy</b></a>
-                        </li>
+                        
                          <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><b style="font-size:20px;padding:20px;">Admin</b></a>
                             <div class="dropdown-menu">
                                  <a class="dropdown-item" 
-                                   asp-area="Foods" asp-controller="FoodCategories" asp-action="Index">Food Categories</a>
+                                   asp-area="Admins" asp-controller="FoodCategories" asp-action="Index">Food Categories</a>
                                  <a class="dropdown-item"
-                                   asp-area="Foods" asp-controller="Foods" asp-action="Index">Food Items</a>
+                                   asp-area="Admins" asp-controller="Foods" asp-action="Index">Food Items</a>
                                    <a class="dropdown-item"
-                                   href="https://localhost:44348/Foods/FoodCategories/Create">Add Food Category</a>
+                                   href="https://localhost:44348/Admins/FoodCategories/Create">Add Food Category</a>
                                    <a class="dropdown-item"
-                                   href="https://localhost:44348/Foods/Foods/Create">Add New Food Item </a>
+                                   href="https://localhost:44348/Admins/Foods/Create">Add New Food Item </a>
                                    <a class="dropdown-item"
-                                   href="https://localhost:44348/Foods/Orders/index1">Orders List</a>
+                                   href="https://localhost:44348/Admins/Orders/index">Orders List</a>
+                                <a class="dropdown-item"
+                                   asp-area="Admins" asp-controller="OrderStatus" asp-action="Index">Order Status List</a>
                                
                             </div>
                         </li>
@@ -48,24 +48,25 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><b style="font-size:20px;padding:20px;">User</b></a>
                             <div class="dropdown-menu">
                             
-                                 <a class="dropdown-item" 
-                                   href="https://localhost:44348/Foods/Customers/Create">User Registration</a>
                                  <a class="dropdown-item"
-                                   href="https://localhost:44348/Foods/Foods/index1">Food Items</a>
+                                   href="https://localhost:44348/Users/Foods/index">Food Items</a>
                                  <a class="dropdown-item" 
-                                   href="https://localhost:44348/Foods/Orders/Create">Order Now </a>
-                                 
+                                   href="https://localhost:44348/Users/Orders/Create">Order Now </a>
+                                <a class="dropdown-item"
+                                   asp-area="Users" asp-controller="Orders" asp-action="Index">Orders List</a>
+                                   <a class="dropdown-item"
+                                   asp-area="Users" asp-controller="OrderStatus" asp-action="StatusView">Orders Status</a>
+                                
 
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://localhost:44348/Foods/Customers/Create"><b style="font-size:20px;padding:20px;">User Registration</b></a>
-                        </li>
+                        
                          <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://localhost:44348/Foods/Orders/Create"><b style="font-size:20px;padding:20px;">Order Now</b> </a>
+                            <a class="nav-link text-dark" href="https://localhost:44348/Users/Orders/Create"><b style="font-size:20px;padding:20px;">Order Now</b> </a>
                         </li>
                     </ul>
                 </div>
+                <partial name="_LoginPartial" />
             </div>
         </nav>
     </header>

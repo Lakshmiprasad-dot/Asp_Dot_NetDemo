@@ -1,9 +1,10 @@
 ﻿using Asp_Dot_NetDemo.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Asp_Dot_NetDemo.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> categories { get; set; }

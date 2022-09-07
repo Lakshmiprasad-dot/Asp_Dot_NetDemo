@@ -13,7 +13,7 @@
 <br /><br />
 
 <h2>Hello user ! , If you are not registered Please Registere Here .... </h2><br />
-<a href="https://localhost:44348/Foods/Customers/Create"><button style="width:250px;height:70px;color:indigo;text-align:center;border-radius:10px;background-color:lightseagreen;"><h5>Register Now</h5></button></a>
+<a asp-area="Identity" asp-page="/Account/Register"><button style="width:250px;height:70px;color:indigo;text-align:center;border-radius:10px;background-color:lightseagreen;"><h5>Register Now</h5></button></a>
 
 <br /><br /><br />
 <h4 style="color:crimson;">Please Choose Your Orders...!  Here ....And Then Create Your Orders ...</h4>
@@ -31,7 +31,7 @@
             </div>
         </td>
         <td>
-           <a href="https://localhost:44348/Foods/Orders/Create">
+           <a asp-area="Users" asp-controller="Orders" asp-action="Create">
             <button style="width:150px;height:60px;color:red;text-align:center;border-radius:5px;background-color:cadetblue;"><b>Order Now</b></button></a>
         </td>
     </tr>
@@ -42,7 +42,7 @@
         </div>
         </td>
         <td>
-            <a href="https://localhost:44348/Foods/Orders/Create">
+            <a asp-area="Users" asp-controller="Orders" asp-action="Create">
             <button style="width:150px;height:60px;color:red;text-align:center;border-radius:5px;background-color:cadetblue;"><b>Order Now</b></button></a>
         </td>
     </tr>
@@ -53,12 +53,12 @@
             </div>
         </td>
         <td style="padding-right:30px;">
-             <a href="https://localhost:44348/Foods/Orders/Create">
+            <a asp-area="Users" asp-controller="Orders" asp-action="Create">
             <button style="width:150px;height:60px;color:red;text-align:center;border-radius:5px;background-color:cadetblue;"><b>Order Now</b></button></a>
         </td>
     </tr>
  </table> 
  <br />
  <h3 style="color:fuchsia;">List Of Food Items Available ...! Click Here ..!</h3>
-     <a href="https://localhost:44348/Foods/Foods/index1">
+<a asp-area="Users" asp-controller="Foods" asp-action="Index">
             <button style="width:200px;height:70px;color:orangered;text-align:center;border-radius:5px;"><b>List Of Items</b></button></a>

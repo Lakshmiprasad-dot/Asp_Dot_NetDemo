@@ -20,7 +20,7 @@ namespace Asp_Dot_NetDemo.xUnitTestProject
             // ARRANGE
             int expectedResult = 25;
             int actualResult;
-            int a = 9, b = 15;
+            int a = 10, b = 15;
 
             // ACT
             actualResult = a + b;

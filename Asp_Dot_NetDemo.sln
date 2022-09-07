@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_Dot_NetDemo", "Asp_Dot_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRestaurant.Web", "OnlineRestaurant.Web\OnlineRestaurant.Web.csproj", "{5ACB9328-0C95-4D1D-8076-D3703A0416CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_Dot_NetDemo.xUnitTestProject", "Asp_Dot_NetDemo.xUnitTestProject\Asp_Dot_NetDemo.xUnitTestProject.csproj", "{9B953034-50F2-47A5-B358-E84893C42E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_Dot_NetDemo.xUnitTestProject", "Asp_Dot_NetDemo.xUnitTestProject\Asp_Dot_NetDemo.xUnitTestProject.csproj", "{9B953034-50F2-47A5-B358-E84893C42E78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

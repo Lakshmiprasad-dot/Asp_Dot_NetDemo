@@ -13,6 +13,7 @@ using Asp_Dot_NetDemo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 // Add the assembly attribute, to ensure that the Swagger generates the complete API Documentation.
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
@@ -35,6 +36,13 @@ namespace Asp_Dot_NetDemo
             {
                 options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
             });
+            // Register the OWIN Identity Middleware
+            // to use the default IdentityUser and IdentityRole profiles
+            // and store the data in the ApplicationDbContext
+            services
+                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddRazorPages();
 
             // Register the MVC Middleware - NEEDED for Swagger Documentation Middleware 
@@ -80,7 +88,7 @@ namespace Asp_Dot_NetDemo
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
