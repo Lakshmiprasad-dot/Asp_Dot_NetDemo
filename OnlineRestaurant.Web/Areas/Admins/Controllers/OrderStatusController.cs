@@ -67,6 +67,7 @@ namespace OnlineRestaurant.Web.Areas.Admins.Controllers
             {
                 // Check for Duplicates
                 bool isFound = _context.OrderStatus.Any(c => c.OrderId == orderStatus.FoodOrderId);
+                bool isFound1 = _context.OrderStatus.Any(c => c.OrderId == orderStatus.FoodOrderId);
                 if (isFound)
                 {
                     ModelState.AddModelError("FoodOrderId", "Duplicate Status Found!");
